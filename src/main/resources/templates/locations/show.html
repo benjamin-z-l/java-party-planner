@@ -9,7 +9,7 @@
   <h1 th:text="*{name}"></h1>
   <ul>
     <li th:text="|*{city}, *{state}|"></li>
-    <li th:text="*{rentalPrice eq null} ? *{rentalPrice} : 'FREE!'"></li>
+    <li th:text="*{rentalPrice != null ? rentalPrice : 'FREE!' }"></li>
   </ul>
 </div>
 </body>
