@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<h1>Add A New Location!!!!!!!!!!!</h1>
+  <form th:action="@{/locations}" method="post" th:object="${location}">
+    <div>
+      <label th:for="name">Name:</label>
+      <input type="text" th:field="*{name}">
+    </div>
+    <div>
+      <label th:for="city">City:</label>
+      <input type="text" th:field="*{city}">
+    </div>
+    <div>
+      <label th:for="state">State:</label>
+      <input type="text" th:field="*{state}">
+    </div>
+    <div>
+      <label th:for="rentalPrice">Rental Price (optional):</label>
+      <input type="text" th:field="*{rentalPrice}">
+    </div>
+    <input type="submit">
+  </form>
+</body>
+</html>

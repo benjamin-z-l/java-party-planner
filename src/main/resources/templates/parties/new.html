@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Add A PARTY</title>
+</head>
+<body>
+<h1>Add A PARTY!</h1>
+<form th:action="@{/parties}" method="post" th:object="${party}">
+  <div>
+    <label th:for="name">Name:</label>
+    <input type="text" th:field="*{name}">
+  </div>
+  <div>
+    <select th:field="*{location}">
+      <option th:each="location : ${locations}"
+              th:value="${location.id}"
+              th:text="${location.name}"></option>
+    </select>
+  </div>
+  <div>
+    <label th:for="description">Description:</label>
+    <input type="text" th:field="*{description}">
+  </div>
+
+  <input type="submit">
+</form>
+</body>
+</html>
